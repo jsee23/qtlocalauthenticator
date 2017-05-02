@@ -6,7 +6,7 @@ C++ and QML library for biometric authentication (e.g. Touch ID)
 qmake
 make
 make install
-´´´
+```
 
 1. C++ module
    1.a. adding to your .pro file
@@ -14,7 +14,7 @@ make install
 ...
 QT += localauthenticator
 ...
-´´´ 
+``` 
    1.b. sample code
 ```
 QLocalAuthenticator authenticator;
@@ -33,7 +33,7 @@ void MyFancyClass::authenticationFinished(bool success,
     else
         qWarning("Authentication failed! reason = %d", reason);
 }
-´´´
+```
 
 2. QML module
    2.1. sample code
@@ -54,7 +54,7 @@ import jsee23.authenticator 0.1
         }
     }
 ...
-´´´
+```
 
 
 currently supported platforms: iOS
