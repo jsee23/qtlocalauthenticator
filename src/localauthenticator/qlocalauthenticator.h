@@ -34,8 +34,6 @@ public:
     explicit QLocalAuthenticator(QObject *parent = 0);
     virtual ~QLocalAuthenticator();
 
-    void requestAuthentication();
-
     bool isPolicySupported(AuthenticationPolicy policy,
                            AuthenticationPolicyFailureReason *reason = nullptr);
 
@@ -44,6 +42,9 @@ public:
 
     void setPolicy(const AuthenticationPolicy policy);
     AuthenticationPolicy policy() const;
+
+public slots:
+    void requestAuthentication();
 
 signals:
     void authenticationFinished(bool success,
