@@ -1,0 +1,4 @@
+module jsee23.authenticator
+plugin qtlocalauthenticatorplugin
+classname QtLocalAuthenticatorPlugin
+typeinfo plugins.qmltypes
