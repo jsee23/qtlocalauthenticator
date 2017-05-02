@@ -9,7 +9,8 @@ make install
 ```
 
 2. C++ module
-   1.a. adding to your .pro file
+
+1.a. adding to your .pro file
 ```
 ...
 QT += localauthenticator
