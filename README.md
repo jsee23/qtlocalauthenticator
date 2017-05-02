@@ -1,21 +1,21 @@
 # QtLocalAuthenticator
 C++ and QML library for biometric authentication (e.g. Touch ID)
 
-* installation
+1. installation
 ```
 qmake
 make
 make install
 ```
 
-1. C++ module
+2. C++ module
    1.a. adding to your .pro file
 ```
 ...
 QT += localauthenticator
 ...
 ``` 
-   1.b. sample code
+2.b. sample code
 ```
 QLocalAuthenticator authenticator;
 authenticator.setReason("Access your private information!");
@@ -35,8 +35,9 @@ void MyFancyClass::authenticationFinished(bool success,
 }
 ```
 
-2. QML module
-   2.1. sample code
+3. QML module
+
+3.1. sample code
 ```
 ...
 import jsee23.authenticator 0.1
