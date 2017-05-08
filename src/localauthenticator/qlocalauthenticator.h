@@ -3,7 +3,6 @@
 
 #include <QObject>
 
-class QLocalAuthenticatorPrivate;
 class QLocalAuthenticator : public QObject
 {
     Q_OBJECT
@@ -55,7 +54,6 @@ signals:
     void policyChanged();
 
 private:
-    QLocalAuthenticatorPrivate* d_ptr;
     QString m_reason;
     AuthenticationPolicy m_policy;
 };

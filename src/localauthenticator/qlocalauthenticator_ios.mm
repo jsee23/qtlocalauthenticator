@@ -10,15 +10,8 @@ static inline LAPolicy qauthenticationpolicyToNative(QLocalAuthenticator::Authen
                 LAPolicyDeviceOwnerAuthentication;
 }
 
-class QLocalAuthenticatorPrivate
-{
-public:
-    //
-};
-
 QLocalAuthenticator::QLocalAuthenticator(QObject *parent)
     : QObject(parent)
-    , d_ptr(new QLocalAuthenticatorPrivate)
     , m_policy(PolicyWithBiometrics)
 {
     qRegisterMetaType<QLocalAuthenticator::AuthenticationFailureReason>("QLocalAuthenticator::AuthenticationFailureReason");
@@ -26,7 +19,6 @@ QLocalAuthenticator::QLocalAuthenticator(QObject *parent)
 
 QLocalAuthenticator::~QLocalAuthenticator()
 {
-    delete d_ptr;
 }
 
 void QLocalAuthenticator::requestAuthentication()
