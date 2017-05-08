@@ -5,7 +5,7 @@ QT += core
 
 DEFINES += QT_NO_CAST_TO_ASCII QT_NO_CAST_FROM_ASCII
 
-PUBLIC_HEADERS += \
+HEADERS += \
     qlocalauthenticator.h
 
 SOURCES += \
@@ -15,6 +15,9 @@ ios {
     OBJECTIVE_SOURCES += \
         qlocalauthenticator_ios.mm
     LIBS += -framework LocalAuthentication
+} else {
+    SOURCES += \
+        qlocalauthenticator_dummy.cpp
 }
 
 load(qt_module)
