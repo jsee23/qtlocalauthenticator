@@ -27,7 +27,8 @@ public:
         CredentialsWrong,
         CancelledByUser,
         //UserFallback
-        CancelledBySystem
+        CancelledBySystem,
+        PolicyNotSupported
     };
     Q_ENUM(AuthenticationFailureReason)
 

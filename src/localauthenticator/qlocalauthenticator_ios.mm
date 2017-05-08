@@ -59,8 +59,7 @@ void QLocalAuthenticator::requestAuthentication()
                 }
             }];
     } else {
-        qWarning("problem....%d", authReason);
-        // Could not evaluate policy; look at authError and present an appropriate message to user
+        emit authenticationFinished(false, QLocalAuthenticator::PolicyNotSupported);
     }
 }
 
