@@ -2,8 +2,11 @@
 #define QLOCALAUTHENTICATOR_H
 
 #include <QObject>
+#include "qtlocalauthenticatorglobal_p.h"
 
-class QLocalAuthenticator : public QObject
+QT_BEGIN_NAMESPACE
+
+class Q_LOCALAUTHENTICATOR_EXPORT QLocalAuthenticator : public QObject
 {
     Q_OBJECT
 
@@ -59,5 +62,7 @@ private:
 };
 
 Q_DECLARE_METATYPE(QLocalAuthenticator::AuthenticationFailureReason)
+
+QT_END_NAMESPACE
 
 #endif // QLOCALAUTHENTICATOR_H
