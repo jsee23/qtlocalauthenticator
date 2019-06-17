@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- azure-pipeline
+
+pool:
+  vmImage: 'macOS-10.13'
+
+steps:
+- script: brew install gawk grep pyenv-virtualenv 
+  displayName: 'Installing gawk via homebrew'
+- bash: |
+    pyenv virtualenv conan
+    pyenv rehash
+    pyenv activate conan
+    pip install conan
+    conan remote add jsee23-qt5 https://api.bintray.com/conan/jsee23/Qt5 
+    conan install qt5-ios/5.12.3@jsee23/stable -r jsee23-qt5 -s os=iOS -s os.version=10.0 -s compiler.version=9.1
+    conan info --paths qt5-ios/5.12.3@jsee23/stable | ggrep package_folder
+    export QT_PATH=$(conan info --paths qt5-ios/5.12.3@jsee23/stable -s os=iOS -s os.version=10.0 -s compiler.version=9.1 | ggrep package_folder | gawk '{print $2}')
+    echo "##vso[task.setvariable variable=QTPATH]$QT_PATH"
+  displayName: 'Download Qt5.12.3 for iOS via Conan'
+- bash: |
+    $QTPATH/bin/qmake CONFIG+=release
+  displayName: 'qmake'
+- script: make
+  displayName: 'make'

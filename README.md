@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/jsee23github/github/_apis/build/status/jsee23.qtlocalauthenticator?branchName=master)](https://dev.azure.com/jsee23github/github/_build/latest?definitionId=1&branchName=master)
+
 # QtLocalAuthenticator
 C++ and QML library for biometric authentication (e.g. Touch ID)
 
