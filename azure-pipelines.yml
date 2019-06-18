@@ -14,7 +14,7 @@ resources:
 
 jobs:
 - job: BuildForIos
-  displayName: 'iOS Qt5.12.3'
+  displayName: 'iOS Qt5.12'
   pool:
     vmImage: 'macos-10.13'
   steps:
@@ -37,7 +37,7 @@ jobs:
   - script: make
     displayName: 'make'
 - job: BuildForAndroid
-  displayName: 'Android Qt5.12.3'
+  displayName: 'Android Qt5.11'
   pool:
     vmImage: 'ubuntu-16.04'
   container: qt5android
